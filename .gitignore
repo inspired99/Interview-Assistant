@@ -1,3 +1,4 @@
-data/
+/leetcode_scraping/src/data/
 .idea/
 .DS_Store
+/leetcode_scraping/src/sundry/
