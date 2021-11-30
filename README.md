@@ -15,5 +15,7 @@
 #### InterviewAsisstantBot commands:
 
   `<Finish>` - finish working on the task
+  
   `<Process>`
   
+  `<New companies>`
