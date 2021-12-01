@@ -1,6 +1,7 @@
 import json
 
 from scrapingbee import ScrapingBeeClient
+from requests import Response
 
 
 class ScrBeeSharedClient:
@@ -13,7 +14,7 @@ class ScrBeeSharedClient:
         self.current_client = None
         self.__update_client()
 
-    def get(self, *args, **kwargs):
+    def get(self, *args, **kwargs) -> Response:
         response = self.current_client.get(*args, **kwargs)
         if response.content == self.API_KEY_LIMIT_REACHED_CONTENT:
             with open(self.api_keys_json_path_, 'rw') as api_keys_json:
