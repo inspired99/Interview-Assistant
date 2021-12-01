@@ -10,7 +10,7 @@
 
 #### The idea of the project:
 
-#### Stack of technologies: *Python, MySQL, WebScrapping*
+#### Stack of technologies: *Python, MySQL, WebScrapping, Pythonanywhere (cloud platform)*
 
 #### InterviewAsisstantBot commands:
 
