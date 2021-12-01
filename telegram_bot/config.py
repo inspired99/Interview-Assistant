@@ -1,5 +1,5 @@
 # Telegram bot
-API_KEY = '2104213549:AAH473v7U_lxNhgrhDG_od8b6g5oJwH44XU'
+API_KEY = '2104213549:AAGprzSYiO2zAXCUTIkvZugc1aRQK2UVTi8'
 
 # Database
 HOST_NAME = "localhost"
