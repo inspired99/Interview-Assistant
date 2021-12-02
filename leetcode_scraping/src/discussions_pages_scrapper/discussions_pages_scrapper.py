@@ -1,4 +1,5 @@
-import logging
+import logging.handlers
+import logging.handlers
 import os.path
 
 from leetcode_scraping.src.scrapping_bee_shared_client. \
@@ -8,11 +9,9 @@ from leetcode_scraping.src.utils.const import LOG_DIR, SCRAPPED_PAGES_DIR, \
 from leetcode_scraping.src.utils.file_utils import write_response_content
 from leetcode_scraping.src.utils.url_utils import make_disc_page_url
 
-logging.basicConfig(filename=os.path.join(LOG_DIR, 'DiscPageScrap.log'),
+logging.basicConfig(filename=os.path.join(LOG_DIR, 'CommonLog.log'),
                     filemode='w',
-                    format='%(name)s - %(levelname)s - %(message)s',
-                    )
-
+                    format='%(name)s - %(levelname)s - %(message)s')
 logging.getLogger().setLevel(logging.INFO)
 
 
@@ -39,6 +38,3 @@ class DiscPagesScrapper:
                     write_response_content(SCRAPPED_PAGES_DIR,
                                            comp, stage, response.content)
                     logging.info(f'successfully scrapped url: {url} ')
-
-
-

@@ -17,10 +17,12 @@ class ScrBeeSharedClient:
     def get(self, *args, **kwargs) -> Response:
         response = self.current_client.get(*args, **kwargs)
         if response.content == self.API_KEY_LIMIT_REACHED_CONTENT:
-            with open(self.api_keys_json_path_, 'rw') as api_keys_json:
+            with open(self.api_keys_json_path_, 'r+') as api_keys_json:
                 keys_dict = json.load(api_keys_json)
-                keys_dict[self.current_api_key] = False
+                keys_dict[self.current_api_key] = 0
+                api_keys_json.seek(0)
                 json.dump(keys_dict, api_keys_json)
+                api_keys_json.truncate()
             self.__update_client()
             return self.current_client.get(*args, **kwargs)
         return response

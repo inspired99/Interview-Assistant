@@ -11,3 +11,4 @@ def write_response_content(dir_path, company, stage, content, page=1):
     fname = os.path.join(dir_path, f'{company}__{stage}__{page}.html')
     with open(fname, 'wb') as out_html:
         out_html.write(content)
+

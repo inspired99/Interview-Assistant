@@ -7,8 +7,6 @@
 /leetcode_scraping/data/
 /leetcode_scraping/logs/
 
-/leetcode_scraping/src/__pycache__/
-/leetcode_scraping/src/discussions_pages_scrapper/__pycache__/
-/leetcode_scraping/src/scrapping_bee_shared_client/__pycache__/
-/leetcode_scraping/src/utils/__pycache__/
+**/__pycache__/
 /leetcode_scraping/resources/
+/leetcode_scraping/src/main.py
