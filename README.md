@@ -10,7 +10,7 @@
 
 #### The idea of the project:
 
-#### Stack of technologies: *Python, MySQL, WebScrapping, Pythonanywhere (cloud platform)*
+#### Stack of technologies: *Python, Postgesql, Cloud platform*
 
 #### InterviewAsisstantBot commands:
 
@@ -19,3 +19,5 @@
   `<Process>`
   
   `<New companies>`
+
+  
