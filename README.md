@@ -11,13 +11,3 @@
 #### The idea of the project:
 
 #### Stack of technologies: *Python, Postgesql, Cloud platform*
-
-#### InterviewAsisstantBot commands:
-
-  `<Finish>` - finish working on the task
-  
-  `<Process>`
-  
-  `<New companies>`
-
-  
