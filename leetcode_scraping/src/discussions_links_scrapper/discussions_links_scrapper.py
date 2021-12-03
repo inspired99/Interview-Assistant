@@ -4,10 +4,7 @@ import os
 
 from bs4 import BeautifulSoup
 
-from leetcode_scraping.src.scrapping_bee_shared_client. \
-    scrapping_bee_shared_client import ScrBeeSharedClient
-from leetcode_scraping.src.utils.const import SCRAPPED_PAGES_DIR, LOG_DIR, \
-    SCRAPING_BEE_API_KEYS_JSON
+from leetcode_scraping.src.utils.const import SCRAPPED_PAGES_DIR, LOG_DIR
 
 logging.basicConfig(filename=os.path.join(LOG_DIR, 'CommonLog.log'),
                     filemode='w',

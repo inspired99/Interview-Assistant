@@ -1,10 +1,10 @@
-from lc_tasks_refs_scrapper.lc_tasks_refs_scrapper import LcTasksRefsScrapper
-from utils.const import DISCUSS_LINKS_JSON, SCRAPPED_LC_LINKS_JSON
+from lc_tasks_scrapper.lc_tasks_scrapper import LcTasksScrapper
+from utils.const import SCRAPPED_LC_LINKS_JSON
 
 
 def main():
-    lctrs = LcTasksRefsScrapper(DISCUSS_LINKS_JSON, SCRAPPED_LC_LINKS_JSON)
-    lctrs.scrap_task_links()
+    lcts = LcTasksScrapper(SCRAPPED_LC_LINKS_JSON)
+    lcts.scrap_lc_tasks()
 
 
 if __name__ == '__main__':
