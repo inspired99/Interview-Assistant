@@ -1,16 +1,6 @@
-# import pymysql
-# from config import USER_NAME, DATABASE_NAME, PASSWORD, HOST_NAME, PORT
-#
-#
-# conn = pymysql.connect(database=USER_NAME, user=DATABASE_NAME, password=PASSWORD, host=HOST_NAME, port=PORT)
-
-import psycopg2
-from config import USER_NAME, DATABASE_NAME, PASSWORD, HOST_NAME, PORT
-
-
 def register_user(conn, user_id):
     cursor = conn.cursor()
-    cursor.execute(f"INSERT INTO Users (user_id, companies) VALUES({user_id}, ARRAY['', '', '', '', '', '', '', '']);")
+    cursor.execute(f"INSERT INTO Users (user_id) VALUES({user_id});")
     conn.commit()
     cursor.close()
 
@@ -27,27 +17,31 @@ def read_table(conn, table_name, flag_take_task=None, user_id=None, task_id=None
 
         cursor.execute(f"SELECT * FROM {table_name} WHERE ({condition});")
     else:
-        cursor.execute(("SELECT * FROM "
-                        "(SELECT * FROM"
-                        "(Tasks LEFT JOIN "
-                        f"(SELECT * FROM Solved WHERE user_id = {user_id})"
-                        "AS R ON (Tasks.id = R.task_id)) WHERE R.task_id IS NULL)"
-                        "AS T ORDER BY RANDOM() LIMIT 1;"))
+        cursor.execute(("SELECT * FROM (SELECT * FROM ("
+                        "Tasks "
+                        "LEFT JOIN ("
+                        f"SELECT * FROM Solved WHERE user_id = {user_id}"
+                        ") AS S ON (Tasks.id = S.task_id)) "
+                        "WHERE (S.task_id IS NULL)) AS A "
+                        f"JOIN (SELECT company FROM UsersCompanies WHERE (user_id = {user_id})) "
+                        "AS B ON (A.company = B.company) "
+                        f"JOIN (SELECT stage FROM UsersStages WHERE (user_id = {user_id})) "
+                        "AS C ON (A.stage = C.stage);"))
     data = cursor.fetchall()
     cursor.close()
     return data
 
 
-def insert_company(conn, user_id, company_index, company_name):
+def insert_element(conn, table_name, user_id, attribute, element):
     cursor = conn.cursor()
-    cursor.execute(f"UPDATE Users SET companies[{company_index + 1}] = '{company_name}' WHERE user_id = '{user_id}';")
+    cursor.execute(f"INSERT INTO {table_name} (user_id, {attribute}) VALUES({user_id}, '{element}');")
     conn.commit()
     cursor.close()
 
 
-def delete_company(conn, user_id, company_index):
+def delete_element(conn, table_name, user_id, attribute, element):
     cursor = conn.cursor()
-    cursor.execute(f"UPDATE Users SET companies[{company_index + 1}] = '' WHERE user_id = '{user_id}';")
+    cursor.execute(f"DELETE FROM {table_name} WHERE (user_id = {user_id} AND {attribute} = '{element}');")
     conn.commit()
     cursor.close()
 
