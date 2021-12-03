@@ -8,6 +8,4 @@
 + Dmitriy Saifullin
 + Elisey Evseev
 
-#### The idea of the project:
-
 #### Stack of technologies: *Python, Postgesql, Cloud platform*
