@@ -1,3 +1,12 @@
-data/
+/leetcode_scraping/src/data/
 .idea/
 .DS_Store
+/leetcode_scraping/src/sundry/
+/leetcode_scraping/data/scrapped_discuss_pages/
+/leetcode_scraping/__pycache__/
+/leetcode_scraping/data/
+/leetcode_scraping/logs/
+
+**/__pycache__/
+/leetcode_scraping/resources/
+/leetcode_scraping/src/main.py
