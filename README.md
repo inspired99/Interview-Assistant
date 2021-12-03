@@ -24,3 +24,4 @@ After you should press button `Continue to stage selection`.
 Stages - `Phone screen`, `Onsite`, `Online assessment`.
 
 Press `Let's get started!`
+
