@@ -8,7 +8,7 @@
 + Dmitriy Saifullin
 + Elisey Evseev
 
-#### Stack of technologies: *Python, Postgesql, Cloud platform*
+#### Stack of technologies: *Python, Postgresql, Cloud platform (heroku)
 
 This bot helps prepare for interviews in IT companies. 
 
@@ -24,4 +24,5 @@ After you should press button `Continue to stage selection`.
 Stages - `Phone screen`, `Onsite`, `Online assessment`.
 
 Press `Let's get started!`
+
 
