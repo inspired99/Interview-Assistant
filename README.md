@@ -8,9 +8,9 @@
 + Dmitriy Saifullin
 + Elisey Evseev
 
-#### Stack of technologies: *Python, Postgresql, Cloud platform (heroku)
+#### Description: This bot helps user prepare for interviews in IT companies by collecting algorithmic problems via tags by scapping html info from website.
 
-This bot helps prepare for interviews in IT companies. 
+#### Stack of technologies: *Python, Postgresql, Cloud platform (heroku)
 
 Type `/start` to start.
 
@@ -24,6 +24,7 @@ Stages - `Phone screen`, `Onsite`, `Online assessment`.
 
 Press `Let's get started!`
 
+Some screenshots:
 
 ![1](https://user-images.githubusercontent.com/64794482/216774863-40907863-8fad-4ebb-9673-7e5e25683b63.PNG)
 
